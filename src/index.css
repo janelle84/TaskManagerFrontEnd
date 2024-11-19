@@ -1,0 +1,322 @@
+/* General Reset and Body Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  background-color: #dc4c3e;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon, .search-icon, .check-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.quick-find {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.quick-find input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+}
+
+/* Navigation Styling */
+nav {
+  background-color: #fefbf2;
+  width: 300px;
+  float: left;
+  height: calc(100vh - 50px);
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+}
+
+nav ul li img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.task-count {
+  color: #7e7d79;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Main Content Styling */
+main {
+  margin-left: 300px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Task List Styling */
+.tasks {
+  list-style-type: none;
+}
+
+.tasks li {
+  display: flex;
+  align-items: center;
+}
+
+.task-label {
+  cursor: text;
+  flex: 1;
+  line-height: 1.5;
+  padding: 2px 0;
+}
+
+/* Task edit input styling without outline or shadow */
+.task-edit-input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: 0;
+  width: 100%;
+  flex: 1;
+}
+
+.task-edit-input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Radio Button Styling */
+.tasks input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #7e7d79;
+  border-radius: 50%;
+  outline: none;
+  margin-right: 10px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.tasks input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #7e7d79;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Task Container Styling */
+#addTaskContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #7e7d79;
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+#addTaskContainer:hover {
+  color: #dc4c3e;
+}
+
+.add-task-icon {
+  margin-right: 8px;
+}
+
+#addTaskContainer:hover .add-task-icon {
+  filter: invert(40%) sepia(64%) saturate(2728%) hue-rotate(338deg) brightness(87%) contrast(95%);
+}
+
+/* Task Input Box Styling */
+#taskInputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#newTaskInput {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 0;
+  background: transparent;
+}
+
+#newTaskInput:focus {
+  outline: none;
+}
+
+/* Task Buttons Styling */
+.task-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 16px;
+  border-top: 1px solid #ddd;
+}
+
+.task-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#addTaskButton {
+  background-color: #dc4c3e;
+  color: white;
+}
+
+#cancelButton {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+#addTaskButton:hover {
+  background-color: #c43b2d;
+}
+
+#cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+#addTaskButton.disabled {
+  background-color: #e57368;
+  color: #ccc;              
+  cursor: not-allowed;       
+}
+
+#addTaskButton:disabled {
+  pointer-events: none;      
+}
+
+/* Mobile View Styling */
+@media (max-width: 480px) {
+  nav {
+      display: none;
+  }
+
+  main {
+      margin-left: 0;
+  }
+}
+
+/* Divider styling for each task */
+.tasks li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tasks li:last-child {
+  border-bottom: none;
+}
+
+/* Sidebar */
+#navbar {
+  width: 300px;
+  float: left;
+  height: calc(100vh - 50px);
+  background-color: #fefbf2;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar item styling */
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navbar ul li {
+  padding: 10px 15px;
+  margin: 3px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Main content transition for sidebar hide */
+main {
+  margin-left: 300px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+main.full-width {
+  margin-left: 0;
+}
+
+/* Sidebar item hover and active styling */
+#navbar ul li {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+/* Active item styling - light gray */
+#navbar ul li.active {
+  background-color: #e8e8e8; /* Light gray for active state */
+  color: #555; /* Medium-dark text for contrast */
+  font-weight: bold;
+}
+
+/* Hover styling - even lighter gray */
+#navbar ul li:hover {
+  background-color: #f2f2f2; /* Very light gray for hover */
+}
